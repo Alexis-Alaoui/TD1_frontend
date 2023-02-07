@@ -6,7 +6,7 @@
 
     let locations = data.response;
     let currentPage = 1;
-    let itemsPerPage = 100;
+    let itemsPerPage = 50;
 
 
 
@@ -68,15 +68,19 @@ let locationModal2="locationModal2";
     <h1 class="text-center">Liste des tournages</h1>
 
     <div class="locations">
+        {#if data.role === "admin"}
+        <td><a class="btn btn-outline-warning" href="/ajouter/"><span class="fa fa-plus-circle"></span> Ajouter</a></td>
+        {/if}
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>Nom du tournage</th>
                 <th>Réalisateur</th>
                 <th>Détails</th>
-                <th>Modifier</th>
-                <th>Ajouter</th>
-                <th>Supprimer</th>
+                {#if data.role === "admin"}
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+                {/if}
 
             </tr>
             </thead>
@@ -89,7 +93,6 @@ let locationModal2="locationModal2";
                     {#if data.role === "admin"}
                     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
                     <td><a class="btn btn-outline-info" href="/editor/{location._id}"><span class="fa fa-pencil-square-o"></span> Modifier</a></td>
-                    <td><a class="btn btn-outline-warning" href="/ajouter/"><span class="fa fa-plus-circle"></span> Ajouter</a></td>
 
 
                     <td>

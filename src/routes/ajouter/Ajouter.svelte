@@ -95,7 +95,7 @@
 						/>
 					</fieldset>
 
-					<button class="btn btn-lg pull-xs-right btn-primary">Sauvegarder</button>
+					<button class="btn btn-lg pull-xs-right btn-info">Sauvegarder</button>
 				</form>
 			</div>
 		</div>

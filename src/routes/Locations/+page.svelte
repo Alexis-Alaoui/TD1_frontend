@@ -4,6 +4,7 @@
     export let data;
 
 
+
     let locations = data.response;
     let currentPage = 1;
     let itemsPerPage = 50;

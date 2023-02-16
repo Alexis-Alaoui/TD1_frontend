@@ -5,12 +5,13 @@ export async function load({ locals }) {
     const user =locals.user
     const token = user.split('.')
     const role=JSON.parse(atob(token[1])).role
-    const response = await fetch('http://localhost:3000/locations', {
+    const response = await fetch('https://location-app-back.onrender.com/locations', {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${locals.user }`}
 
 
     }).then(res=>res.json());
+
     console.log(role)
     return {response, role,locals}
 
@@ -21,7 +22,7 @@ export const actions = {
     deleteLocation: async ({locals, request}) => {
     const form = await request. formData();
     const id = form.get ('id');
-    const body = await fetch(  `http://Localhost:3000/Locations/${id}`, {
+    const body = await fetch(  `https://location-app-back.onrender.com/Locations/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${locals.user }`}
 
@@ -30,4 +31,9 @@ export const actions = {
        console.log(body)
     }
 
+
+
 }
+
+
+

@@ -15,7 +15,7 @@ export const actions = {
 			startDate: data.get('startDate'),
 			endDate: data.get('endDate'),
 			year: data.get('year')   };
-		const body = await fetch(`http://localhost:3000/locations`,{
+		const body = await fetch(`https://location-app-back.onrender.com/locations`,{
 			method:'POST',
 			headers:{
 				'Content-Type':'application/json',
